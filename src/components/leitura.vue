@@ -2,7 +2,7 @@
   <div id="app">
     <v-card class="card" color="#c6c6c6" outlined shaped>
       <div class="card-title"><b>Leitor de distância</b></div>
-      <div class="card-sub">Com ESP32 e HC-SR04.</div>
+      <div class="card-sub">Leitura com ESP32 e HC-SR04.</div>
       <div class="card-dist">{{esp}}</div>
 
       <div class="gauge">
