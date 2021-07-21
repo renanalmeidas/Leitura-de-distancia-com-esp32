@@ -4,7 +4,6 @@
       <div class="card-title"><b>Leitor de distância</b></div>
       <div class="card-sub">Leitura com ESP32 e HC-SR04.</div>
       <div class="card-dist">{{esp}}</div>
-
       <div class="gauge">
         <GChart
           :settings="{ packages: ['Gauge'] }"
@@ -13,11 +12,13 @@
           :options="chartODist"
         />
       </div>
-
       <div class="btn-led">
         <p id="espaco">LED ON/OFF:</p>
-        <v-icon color="#008000" large>mdi-power-standby</v-icon>
-        <v-icon color="#ff0000" large>mdi-power-standby</v-icon>
+        <v-btn icon>
+          <v-icon v-if="ledOn" color="#008000" large>mdi-power-standby</v-icon>
+          <v-icon v-if="ledOff" color="#ff0000" large>mdi-power-standby</v-icon>
+        </v-btn>
+
       </div>
     </v-card>
   </div>
@@ -35,8 +36,8 @@ export default {
   data() {
     return {
       // led power on-off
-      // ledOn: false,
-      // ledOff: true,
+      ledOn: false,
+      ledOff: true,
 
       // Array will be automatically processed with visualization.arrayToDataTable function
       chartDist: [

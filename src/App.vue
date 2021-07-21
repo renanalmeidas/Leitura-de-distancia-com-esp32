@@ -10,7 +10,11 @@ import Leitura from "@/components/leitura";
 
 export default {
   name: 'App',
-  components: { Leitura }
+  components: { Leitura },
+
+  mounted() {
+    this.$mqtt.subscribe('INSERT URL HERE')
+  }
 }
 </script>
 
@@ -23,9 +27,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-body {
-  background-color: #ddd;
 }
 </style>
