@@ -18,7 +18,6 @@
           <v-icon v-if="ledOn" color="#008000" large>mdi-power-standby</v-icon>
           <v-icon v-if="ledOff" color="#ff0000" large>mdi-power-standby</v-icon>
         </v-btn>
-
       </div>
     </v-card>
   </div>
@@ -46,9 +45,7 @@ export default {
       ],
       chartODist: {
         width: 450, height: 150,
-        greenFrom: 0, greenTo: 100,
-        redFrom: 300, redTo: 400,
-        yellowFrom: 100, yellowTo: 300,
+
         minorTicks: 5, min: 0, max: 400
       },
     }
