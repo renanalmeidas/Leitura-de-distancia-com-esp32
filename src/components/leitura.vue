@@ -3,7 +3,7 @@
     <v-card class="card" color="#c6c6c6" outlined shaped>
       <div class="card-title"><b>Leitor de distância</b></div>
       <div class="card-sub">Leitura com ESP32 e HC-SR04.</div>
-      <div class="card-dist">{{esp}}</div>
+      <div class="card-dist">{{esp}} cm</div>
       <div class="gauge">
         <GChart
           :settings="{ packages: ['Gauge'] }"
@@ -56,9 +56,15 @@ export default {
 
   mqtt: {
     "laura/#" : function (data, topics) {
-      console.log(data, topics)
+      if ('laura/sensor' === topics) {
+        let dist = String.fromCharCode.apply(null, data)
+        this.chartDist = [
+            ['Label', 'Value'],
+            ['Distância', Number(dist)]
+        ]
+        this.esp = dist
+      }
     }
-
   },
 
   methods: {
