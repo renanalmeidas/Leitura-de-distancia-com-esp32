@@ -3,7 +3,7 @@
     <v-card class="card" color="#c6c6c6" outlined shaped>
       <div class="card-title"><b>Leitor de distância</b></div>
       <div class="card-sub">Leitura com ESP32 e HC-SR04.</div>
-      <div class="card-dist">{{esp}} cm</div>
+      <div class="card-dist"><b>{{esp}} cm</b></div>
       <div class="gauge">
         <GChart
           :settings="{ packages: ['Gauge'] }"
@@ -96,6 +96,8 @@ export default {
 .card-title {
   margin-top: 20px;
   font-size: 1.8em;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 3px white;
 }
 
 .card-sub {
