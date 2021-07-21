@@ -67,7 +67,6 @@ export default {
   height: 375px;
   margin: auto;
   text-align: center;
-
   box-shadow: 2px 2px 8px black;
 }
 
