@@ -52,6 +52,10 @@ export default {
         minorTicks: 5, min: 0, max: 400
       },
     }
+  },
+
+  mqtt: {
+
   }
 }
 </script>
@@ -64,7 +68,7 @@ export default {
   margin: auto;
   text-align: center;
 
-  box-shadow: 2px 2px 5px black;
+  box-shadow: 2px 2px 8px black;
 }
 
 .card-title {
