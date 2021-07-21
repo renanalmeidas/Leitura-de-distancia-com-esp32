@@ -13,7 +13,7 @@ export default {
   components: { Leitura },
 
   mounted() {
-    this.$mqtt.subscribe('INSERT URL HERE')
+    this.$mqtt.subscribe('laura/#')
   }
 }
 </script>

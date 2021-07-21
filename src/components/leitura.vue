@@ -14,7 +14,7 @@
       </div>
       <div class="btn-led">
         <p id="espaco">LED ON/OFF:</p>
-        <v-btn icon>
+        <v-btn icon @click="clickPub">
           <v-icon v-if="ledOn" color="#008000" large>mdi-power-standby</v-icon>
           <v-icon v-if="ledOff" color="#ff0000" large>mdi-power-standby</v-icon>
         </v-btn>
@@ -55,7 +55,24 @@ export default {
   },
 
   mqtt: {
+    "laura/#" : function (data, topics) {
+      console.log(data, topics)
+    }
 
+  },
+
+  methods: {
+    clickPub: function() {
+      if (this.ledOff === true) {
+        this.$mqtt.publish('laura/led', '1')
+        this.ledOff = false
+        this.ledOn = true
+      } else {
+        this.$mqtt.publish('laura/led', '0')
+        this.ledOff = true
+        this.ledOn = false
+      }
+    }
   }
 }
 </script>
