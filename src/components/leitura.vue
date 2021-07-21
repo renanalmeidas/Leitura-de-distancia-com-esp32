@@ -73,10 +73,12 @@ export default {
         this.$mqtt.publish('laura/led', '1')
         this.ledOff = false
         this.ledOn = true
+        document.getElementById('espaco').innerHTML="LED ON:"
       } else {
         this.$mqtt.publish('laura/led', '0')
         this.ledOff = true
         this.ledOn = false
+        document.getElementById('espaco').innerHTML="LED OFF:"
       }
     }
   }
